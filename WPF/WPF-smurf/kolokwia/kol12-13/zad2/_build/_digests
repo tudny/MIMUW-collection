@@ -1,0 +1,5 @@
+"Rule: ocaml: ml & cmi -> cmx & o (%=main )": "\251\184\181\182\b\026ul\023e\197Q\218\249'\216"
+"Resource: /home/tudny/WPF/WPF-smurf/kolokwia/kol12-13/zad2/main.ml": "\140F\244\171\162#\006\214\200\135\011\223F\209@\222"
+"Rule: ocaml: ml -> cmo & cmi (%=main )": "\246\230{\t*\244\169\1666\162\213\127\147\177\179\186"
+"Rule: ocaml dependencies ml (%=main )": "\t\177>\131\141W\130\1462KK\144\215T\029C"
+"Rule: ocaml: cmx* & o* -> native (%=main )": "\026=6\235\220S\254\192W%\237c\213o#\019"

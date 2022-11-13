@@ -1,0 +1,16 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules main.ml > main.ml.depends
+# Target: counter.ml.depends, tags: { extension:ml, file:counter.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules counter.ml > counter.ml.depends
+# Target: counter.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:counter.cmo, file:counter.ml, implem, ocaml, quiet }
+ocamlc.opt -c -o counter.cmo counter.ml
+# Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet }
+ocamlc.opt -c -o main.cmo main.ml
+# Target: counter.cmx, tags: { compile, extension:cmx, extension:ml, file:counter.cmx, file:counter.ml, implem, native, ocaml, quiet }
+ocamlopt.opt -c -o counter.cmx counter.ml
+# Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
+ocamlopt.opt -c -o main.cmx main.ml
+# Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
+ocamlopt.opt counter.cmx main.cmx -o main.native
+# Compilation successful.

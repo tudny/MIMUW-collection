@@ -1,0 +1,10 @@
+### Starting build.
+# Target: ania.ml.depends, tags: { debug, extension:ml, file:ania.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules ania.ml > ania.ml.depends
+# Target: ania.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:ania.cmo, file:ania.ml, implem, ocaml, quiet }
+ocamlc.opt -c -g -o ania.cmo ania.ml
+# Target: ania.cmx, tags: { compile, debug, extension:cmx, extension:ml, file:ania.cmx, file:ania.ml, implem, native, ocaml, quiet }
+ocamlopt.opt -c -g -o ania.cmx ania.ml
+# Target: ania.native, tags: { debug, dont_link_with, extension:native, file:ania.native, link, native, ocaml, program, quiet }
+ocamlopt.opt -g ania.cmx -o ania.native
+# Compilation successful.

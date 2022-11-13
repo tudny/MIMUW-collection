@@ -1,0 +1,10 @@
+### Starting build.
+# Target: main.ml.depends, tags: { debug, extension:ml, file:main.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules main.ml > main.ml.depends # cached
+# Target: main.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet, traverse }
+ocamlc.opt -c -g -o main.cmo main.ml # cached
+# Target: main.cmx, tags: { compile, debug, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet, traverse }
+ocamlopt.opt -c -g -o main.cmx main.ml # cached
+# Target: main.native, tags: { debug, dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet, traverse }
+ocamlopt.opt -g main.cmx -o main.native # cached
+# Compilation successful.

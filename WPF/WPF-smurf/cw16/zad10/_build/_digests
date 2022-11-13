@@ -1,0 +1,5 @@
+"Rule: ocaml: ml & cmi -> cmx & o (%=main )": "\132\195SG\180\136\139\162\019s\019\183\134\237N\219"
+"Rule: ocaml: ml -> cmo & cmi (%=main )": "\"H<\150\178\025j2A\016\216\235\188}\237\207"
+"Rule: ocaml dependencies ml (%=main )": "\189\158\211\177P\029\184y0\209c\251\224\196uD"
+"Resource: /home/tudny/WPF/CW/CW16/zad10/main.ml": "V\021\209|W\150\129v\242G\205K\144\231:\153"
+"Rule: ocaml: cmx* & o* -> native (%=main )": "\209\182%6#!\228\253#\149\020Q)J\151\228"
