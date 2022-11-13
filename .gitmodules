@@ -27,4 +27,4 @@
 	url = git@github.com:tudny/WPF-testy.git
 [submodule ".\\IPP\\IPP-Polynomials\\"]
 	path = .\\IPP\\IPP-Polynomials\\
-	url = git@github.com:tudny/IPP-Polynomials.git
+	url = https://github.com/tudny/IPP-Polynomials.git
