@@ -1,0 +1,27 @@
+[submodule ".\\WPF\\WPF-Arytmetyka\\"]
+	path = .\\WPF\\WPF-Arytmetyka\\
+	url = git@github.com:tudny/WPF-Arytmetyka.git
+[submodule ".\\WPF\\WPF-DrzewaLewicowe\\"]
+	path = .\\WPF\\WPF-DrzewaLewicowe\\
+	url = git@github.com:tudny/WPF-DrzewaLewicowe.git
+[submodule ".\\WPF\\WPF-ModyfikacjaDrzew\\"]
+	path = .\\WPF\\WPF-ModyfikacjaDrzew\\
+	url = git@github.com:tudny/WPF-ModyfikacjaDrzew.git
+[submodule ".\\WPF\\WPF-Origami\\"]
+	path = .\\WPF\\WPF-Origami\\
+	url = git@github.com:tudny/WPF-Origami.git
+[submodule ".\\WPF\\WPF-smurf\\"]
+	path = .\\WPF\\WPF-smurf\\
+	url = git@github.com:tudny/WPF-smurf.git
+[submodule ".\\WPF\\WPF-Topol\\"]
+	path = .\\WPF\\WPF-Topol\\
+	url = git@github.com:tudny/WPF-Topol.git
+[submodule ".\\WPF\\WPF-Przelewanka\\"]
+	path = .\\WPF\\WPF-Przelewanka\\
+	url = git@github.com:tudny/WPF-Przelewanka.git
+[submodule ".\\WPF\\WPF-Kolosy\\"]
+	path = .\\WPF\\WPF-Kolosy\\
+	url = git@github.com:tudny/WPF-Kolosy.git
+[submodule ".\\WPF\\WPF-testy\\"]
+	path = .\\WPF\\WPF-testy\\
+	url = git@github.com:tudny/WPF-testy.git
