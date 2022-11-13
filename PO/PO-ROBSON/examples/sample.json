@@ -1,0 +1,94 @@
+{
+  "typ": "Blok",
+  "instrukcje": [
+    {
+      "typ": "Liczba",
+      "wartosc": 20.0
+    },
+    {
+      "typ": "Liczba",
+      "wartosc": 17.0
+    },
+    {
+      "typ": "Przypisanie",
+      "nazwa": "a1",
+      "wartosc": {
+        "typ": "Liczba",
+        "wartosc": 123.12
+      }
+    },
+    {
+      "typ": "Zmienna",
+      "nazwa": "a1"
+    },
+    {
+      "typ": "Przypisanie",
+      "nazwa": "i",
+      "wartosc": {
+        "typ": "Liczba",
+        "wartosc": 15.0
+      }
+    },
+    {
+      "typ": "Przypisanie",
+      "nazwa": "sum",
+      "wartosc": {
+        "typ": "Liczba",
+        "wartosc": 0.0
+      }
+    },
+    {
+      "typ": "While",
+      "warunek": {
+        "typ": ">=",
+        "argument1": {
+          "typ": "Zmienna",
+          "nazwa": "i"
+        },
+        "argument2": {
+          "typ": "Liczba",
+          "wartosc": 0.0
+        }
+      },
+      "blok": {
+        "typ": "Blok",
+        "instrukcje": [
+          {
+            "typ": "Przypisanie",
+            "nazwa": "sum",
+            "wartosc": {
+              "typ": "Plus",
+              "argument1": {
+                "typ": "Zmienna",
+                "nazwa": "sum"
+              },
+              "argument2": {
+                "typ": "Zmienna",
+                "nazwa": "i"
+              }
+            }
+          },
+          {
+            "typ": "Przypisanie",
+            "nazwa": "i",
+            "wartosc": {
+              "typ": "Minus",
+              "argument1": {
+                "typ": "Zmienna",
+                "nazwa": "i"
+              },
+              "argument2": {
+                "typ": "Liczba",
+                "wartosc": 1.0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "typ": "Zmienna",
+      "nazwa": "sum"
+    }
+  ]
+}

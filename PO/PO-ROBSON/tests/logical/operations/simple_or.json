@@ -1,0 +1,9 @@
+{
+  "typ": "Or",
+  "argument1": {
+    "typ": "True"
+  },
+  "argument2": {
+    "typ": "False"
+  }
+}

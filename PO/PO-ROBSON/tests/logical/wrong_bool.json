@@ -1,0 +1,10 @@
+{
+  "typ": "And",
+  "argument1": {
+    "typ": "Liczba",
+    "wartosc": 21.37
+  },
+  "argument2": {
+    "typ": "True"
+  }
+}

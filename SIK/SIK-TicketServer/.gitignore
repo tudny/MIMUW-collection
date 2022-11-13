@@ -1,0 +1,5 @@
+.idea/
+cmake-build-*
+/testy-zad1/
+debug
+/abcd.txt

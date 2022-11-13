@@ -1,0 +1,94 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build-debug:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create CMake Debug
+        run: |
+          mkdir debug
+          cd debug
+          cmake -DCMAKE_BUILD_TYPE=Debug ..
+      - name: Compile Debug
+        run: |
+          cd debug
+          make
+        
+  build-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create CMake Release
+        run: |
+          mkdir release
+          cd release
+          cmake -DCMAKE_BUILD_TYPE=Release ..
+      - name: Compile Release
+        run: |
+          cd release 
+          make
+          
+  test1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create CMake Debug
+        run: |
+          mkdir debug
+          cd debug
+          cmake -DCMAKE_BUILD_TYPE=Debug ..
+      - name: Compile Debug and Run test1
+        run: |
+          cd debug
+          make test1
+          ./maptel_test1
+          
+  test2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create CMake Debug
+        run: |
+          mkdir debug
+          cd debug
+          cmake -DCMAKE_BUILD_TYPE=Debug ..
+      - name: Compile Debug and Run test2
+        run: |
+          cd debug
+          make test2
+          ./maptel_test2
+  
+  test-nowak:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Link library files
+        run: |
+          ln -s src/maptel.cc .
+          ln -s src/maptel.h .
+      - name: Download Repository
+        run: git clone https://gitlab.com/mimuw-rocznik-2001/jnp1-2021/testy-zad2.git
+      - name: Test
+        run: |
+          cd testy-zad2          
+          ./test.sh

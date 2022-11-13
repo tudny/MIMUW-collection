@@ -1,0 +1,39 @@
+{
+  "typ": "Or",
+  "argument1": {
+    "typ": "False"
+  },
+  "argument2": {
+    "typ": "Or",
+    "argument1": {
+      "typ": "False"
+    },
+    "argument2": {
+      "typ": "Or",
+      "argument1": {
+        "typ": "False"
+      },
+      "argument2": {
+        "typ": "Or",
+        "argument1": {
+          "typ": "False"
+        },
+        "argument2": {
+          "typ": "Or",
+          "argument1": {
+            "typ": "False"
+          },
+          "argument2": {
+            "typ": "Or",
+            "argument1": {
+              "typ": "False"
+            },
+            "argument2": {
+              "typ": "True"
+            }
+          }
+        }
+      }
+    }
+  }
+}

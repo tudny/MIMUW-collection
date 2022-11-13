@@ -1,0 +1,5 @@
+*.img
+*.img.xz
+*.patch
+/.idea/
+/.vscode/

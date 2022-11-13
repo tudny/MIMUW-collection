@@ -1,0 +1,75 @@
+{
+  "typ": "Blok",
+  "instrukcje": [
+    {
+      "typ": "Przypisanie",
+      "nazwa": "i",
+      "wartosc": {
+        "typ": "Liczba",
+        "wartosc": 1.0
+      }
+    },
+    {
+      "typ": "Przypisanie",
+      "nazwa": "acc",
+      "wartosc": {
+        "typ": "Liczba",
+        "wartosc": 0.0
+      }
+    },
+    {
+      "typ": "While",
+      "warunek": {
+        "typ": "<=",
+        "argument1": {
+          "typ": "Zmienna",
+          "nazwa": "i"
+        },
+        "argument2": {
+          "typ": "Liczba",
+          "wartosc": 10.0
+        }
+      },
+      "blok": {
+        "typ": "Blok",
+        "instrukcje": [
+          {
+            "typ": "Przypisanie",
+            "nazwa": "acc",
+            "wartosc": {
+              "typ": "Plus",
+              "argument1": {
+                "typ": "Zmienna",
+                "nazwa": "i"
+              },
+              "argument2": {
+                "typ": "Zmienna",
+                "nazwa": "acc"
+              }
+            }
+          },
+
+          {
+            "typ": "Przypisanie",
+            "nazwa": "i",
+            "wartosc": {
+              "typ": "Plus",
+              "argument1": {
+                "typ": "Zmienna",
+                "nazwa": "i"
+              },
+              "argument2": {
+                "typ": "Liczba",
+                "wartosc": 1.0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "typ": "Zmienna",
+      "nazwa": "acc"
+    }
+  ]
+}

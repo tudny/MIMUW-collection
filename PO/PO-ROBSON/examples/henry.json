@@ -1,0 +1,20 @@
+{
+  "typ": "Blok",
+  "instrukcje": [
+    {
+      "typ": "Lewo"
+    },
+    {
+      "typ": "Prosto"
+    },
+    {
+      "typ": "Prawo"
+    },
+    {
+      "typ": "Jedz"
+    },
+    {
+      "typ": "Wachaj"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+.idea/
+cmake-build-*
+debug
+release
+at429630*.zip

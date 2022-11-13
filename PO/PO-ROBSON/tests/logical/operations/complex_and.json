@@ -1,0 +1,21 @@
+{
+  "typ": "And",
+  "argument1": {
+    "typ": "And",
+    "argument1": {
+      "typ": "And",
+      "argument1": {
+        "typ": "True"
+      },
+      "argument2": {
+        "typ": "True"
+      }
+    },
+    "argument2": {
+      "typ": "True"
+    }
+  },
+  "argument2": {
+    "typ": "True"
+  }
+}

@@ -1,0 +1,30 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+      
+  test:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: make
+        run: make
+      - name: tests
+        run: |
+            git clone https://gitlab.com/mimuw-rocznik-2001/jnp1-2021/testy-zad1.git
+            ./test.sh nysa testy-zad1

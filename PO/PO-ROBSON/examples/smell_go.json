@@ -1,0 +1,11 @@
+{
+  "typ": "Blok",
+  "instrukcje": [
+    {
+      "typ": "Prosto"
+    },
+    {
+      "typ": "Wachaj"
+    }
+  ]
+}

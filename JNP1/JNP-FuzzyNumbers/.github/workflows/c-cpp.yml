@@ -1,0 +1,40 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-run:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install g++-10
+      run: |
+         sudo apt update
+         sudo apt install gcc-10 g++-10
+      shell: bash
+      
+    - name: create folder
+      run: |
+         mkdir debug
+         cd debug
+      
+    - name: cmake config
+      run: |
+         cd debug
+         cmake .. -DCMAKE_BUILD_TYPE=Debug
+      
+    - name: make
+      run: |
+         cd debug
+         make
+      
+    - name: run
+      run: |
+         cd debug
+         ./Zadanie3_fuzzy

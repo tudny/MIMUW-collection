@@ -1,0 +1,69 @@
+{
+  "typ": "Blok",
+  "instrukcje": [
+    {
+      "typ": "Przypisanie",
+      "nazwa": "acc",
+      "wartosc": {
+        "typ": "Liczba",
+        "wartosc": 10.0
+      }
+    },
+    {
+      "typ": "While",
+      "warunek": {
+        "typ": "Not",
+        "argument": {
+          "typ": "==",
+          "argument1": {
+            "typ": "Zmienna",
+            "nazwa": "acc"
+          },
+          "argument2": {
+            "typ": "Liczba",
+            "wartosc": "0.0"
+          }
+        }
+      },
+      "blok": {
+        "typ": "Blok",
+        "instrukcje": [
+          {
+            "typ": "Przypisanie",
+            "nazwa": "acc",
+            "wartosc": {
+              "typ": "Minus",
+              "argument1": {
+                "typ": "Zmienna",
+                "nazwa": "acc"
+              },
+              "argument2": {
+                "typ": "Liczba",
+                "wartosc": 2.0
+              }
+            }
+          },
+          {
+            "typ": "Przypisanie",
+            "nazwa": "sum",
+            "wartosc": {
+              "typ": "Plus",
+              "argument1": {
+                "typ": "Zmienna",
+                "nazwa": "acc"
+              },
+              "argument2": {
+                "typ": "Zmienna",
+                "nazwa": "sum"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "typ": "Zmienna",
+      "nazwa": "sum"
+    }
+  ]
+}
