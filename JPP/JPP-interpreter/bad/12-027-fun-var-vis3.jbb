@@ -1,0 +1,7 @@
+fun foo() : Integer {
+    return x;
+}
+
+val x: Integer = 42;
+
+foo();

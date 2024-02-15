@@ -1,0 +1,63 @@
+var x: Integer = 0;
+var y: Integer = 1;
+
+if x != y {
+    x = y;
+}
+
+// ==============================================
+
+var x: Integer = 10;
+var y: Integer = 11;
+
+if x == y {
+    writeStr("x and y and equal");
+} else {
+    writeStr("x and y and different");
+}
+
+// ==============================================
+
+var fst: Integer = 0;
+var snd: Integer = 1;
+val N: Integer = 100;
+
+while snd < N {
+    var temp: Integer = snd;
+    snd = snd + fst;
+    fst = temp;
+}
+
+// ==============================================
+
+var x: Integer = 11;
+
+while x > 0 {
+    if x == 10 { break; }
+    x--;
+} finally {
+    writeStr("X was never equal to 10");
+}
+
+var x: Integer = 11;
+
+while x > 0 {
+    if x == 20 { break; }
+    x--;
+} finally {
+    writeStr("X was never equal to 20");
+}
+
+// ==============================================
+
+val N : Integer = 20;
+var sum : Integer = 0;
+for k = 1..N {
+    sum = sum + k;
+}
+
+if sum == N * (N + 1) / 2 {
+    writeStr("Correct!");
+} else {
+    writeStr("Incorrect!");
+}

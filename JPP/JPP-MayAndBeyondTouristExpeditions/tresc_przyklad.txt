@@ -1,0 +1,59 @@
+[user@students Prolog]$ wyprawy tatry.txt
+Podaj miejsce startu: zakopane.
+Podaj miejsce koncowe: rusinowa.
+Podaj warunki : costam.
+Error: niepoprawny warunek - costam.
+Podaj warunki : rodzaj(rower).
+zakopane -(r1,rower)-> brzeziny -(r3,rower)-> poroniec -(r4,rower)-> rusinowa
+Dlugosc trasy: 41.
+Podaj miejsce startu: zakopane.
+Podaj miejsce koncowe: nil.
+Podaj warunki : rodzaj(gorska), dlugosc(lt, 4), dlugosc(gt, 5).
+Error: za duzo warunkow na dlugosc.
+Podaj warunki : rodzaj(gorska), dlugosc(le, 9).
+zakopane -(g1,gorska)-> kuznice
+Dlugosc trasy: 7.
+zakopane -(g2,gorska)-> kalatowki
+Dlugosc trasy: 5.
+Podaj miejsce startu: nil.
+Podaj miejsce koncowe: nil.
+Podaj warunki : rodzaj(piesza).
+zakopane -(p1,piesza)-> gubalowka
+Dlugosc trasy: 5.
+gubalowka -(p1,piesza)-> zakopane
+Dlugosc trasy: 5.
+zakopane -(p1,piesza)-> gubalowka -(p1,piesza)-> zakopane
+Dlugosc trasy: 10.
+gubalowka -(p1,piesza)-> zakopane -(p1,piesza)-> gubalowka
+Dlugosc trasy: 10.
+Podaj miejsce startu: brzeziny.
+Podaj miejsce koncowe: nil.
+Podaj warunki : rodzaj(gorska), rodzaj(rower), dlugosc(lt,20).
+brzeziny -(r2,rower)-> gasienicowa
+Dlugosc trasy: 15.
+brzeziny -(r3,rower)-> poroniec
+Dlugosc trasy: 10.
+brzeziny -(r2,rower)-> gasienicowa -(g5,gorska)-> czarnystaw
+Dlugosc trasy: 18.
+brzeziny -(r3,rower)-> poroniec -(r4,rower)-> rusinowa
+Dlugosc trasy: 16.
+Podaj miejsce startu: gasienicowa.
+Podaj miejsce koncowe: gasienicowa.
+Podaj warunki : rodzaj(gorska), dlugosc(lt,20).
+gasienicowa -(g4,gorska)-> zawrat -(g6,gorska)-> kozia
+-(g7,gorska)-> gasienicowa
+Dlugosc trasy: 18.
+gasienicowa -(g4,gorska)-> zawrat -(g4,gorska)-> gasienicowa
+Dlugosc trasy: 12.
+gasienicowa -(g5,gorska)-> czarnystaw -(g5,gorska)-> gasienicowa
+Dlugosc trasy: 6.
+gasienicowa -(g3,gorska)-> kuznice -(g3,gorska)-> gasienicowa
+Długosc trasy: 14.
+gasienicowa -(g5,gorska)-> czarnystaw -(g5,gorska)-> gasienicowa
+-(g4,gorska)-> zawrat -(g4,gorska)-> gasienicowa
+Dlugosc trasy: 18.
+gasienicowa -(g4,gorska)-> zawrat -(g4,gorska)-> gasienicowa
+-(g5,gorska)-> czarnystaw -(g5,gorska)-> gasienicowa
+Dlugosc trasy: 18.
+Podaj miejsce startu: koniec.
+Koniec programu. Milych wedrowek!

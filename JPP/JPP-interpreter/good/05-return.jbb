@@ -1,0 +1,28 @@
+
+fun xd() {}
+
+var x: Unit;
+x = xd();
+
+x = unit;
+
+
+
+fun foo(val x: Unit) {}
+
+val f: (var$Integer) -> Unit = |var n: new Integer| { n = 2; };
+val g = || 5;
+
+var y = 10;
+writeInt(y);
+writeStr("\n");
+
+f(y);
+writeInt(y);
+writeStr("\n");
+
+writeInt(g());
+writeStr("\n");
+
+foo(x);
+

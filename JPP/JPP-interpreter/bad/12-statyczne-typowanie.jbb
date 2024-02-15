@@ -1,0 +1,67 @@
+
+# Wszystkie te przykłady zostną robite na pojedyncze pliki. Na razie łatwiej
+# czytać je w jednym.
+
+
+var x: Integer = 10;
+x = "abc"; // błąd typowania
+
+var x: String = "abc"; // przysłonięcie zmiennej
+x = 10; // błąd typowania
+
+
+
+10 + "abc"; // błąd typowania
+
+
+val c: Integer = 10;
+c = 20; // błąd typowania - zmiana stałej
+
+
+fun foo(var x: Integer, var y: String) : Boolean {
+    return x == y;
+} // błąd typowania - nie można porównywać liczb do stringów
+
+
+
+fun foo(var x: Integer, var y: String) : Boolean {
+    return toString(x) == y;
+}
+
+foo(10, 20); // błąd typowania - 20 nie jest stringiem
+
+foo(1); // błąd typowania - za mało argumentów
+foo(1, 2, 3); // błąd typowania - za dużo argumentów (i zły typ)
+
+
+
+fun foo(var x: Integer) : Integer {
+    return x + 1;
+}
+
+fun bar(var x: Integer) : Unit {
+    x = x + 1;
+}
+
+val a: Integer = 10;
+val b: Integer = foo(a); // bład typowania - a jest stałą, a foo przyjmuje zmienną
+bar(a); // bład typowania - a jest stałą, a bar przyjmuje zmienną
+
+
+
+fun answer() : String {
+    return "42";
+}
+
+val a: Integer = answer(); // błąd typowania - answer zwraca stringa, a a jest liczbą
+
+
+// błąd typowania - zwracamy liczbę, a funkcja oczekuje Stringa
+fun square(var begin: Integer, var end: Integer) : Gen[String] {
+    for i = begin..end {
+        yield i * i;
+    }
+}
+
+
+niezainicjalizowana_zmienna + 1; // bład typowania - niezainicjalizowana_zmienna nie jest zainicjalizowana ani zadeklarowana

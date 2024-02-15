@@ -1,0 +1,125 @@
+
+val printValue = |val n: new Integer, val name: new String| {
+    writeStr(name);
+    writeStr(" = ");
+    writeInt(n);
+    writeStr("\n");
+};
+
+var x: Integer = -1;
+
+/// Returns either "even" or "odd" depending on the value of n.
+fun evenOdd(val n: new Integer): String {
+    val printN = || {
+        writeStr("n = ");
+        writeInt(n);
+        writeStr("\n");
+    };
+
+    x = n;
+    if n == 0 {
+        printN();
+        return "even";
+    } else if n == 1 {
+        printN();
+        return "odd";
+    } else if n == 2 {
+        printN();
+        return "even";
+    } else if n == 3 {
+        printN();
+        return "odd";
+    } else if n == 4 {
+        printN();
+        return "even";
+    } else if n == 5 {
+        printN();
+        return "odd";
+    } else if n == 6 {
+        printN();
+        return "even";
+    } else if n == 7 {
+        printN();
+        return "odd";
+    } else if n == 8 {
+        printN();
+        return "even";
+    } else if n == 9 {
+        printN();
+        return "odd";
+    } else if n == 10 {
+        printN();
+        return "even";
+    } else if n == 11 {
+        printN();
+        return "odd";
+    } else if n == 12 {
+        printN();
+        return "even";
+    } else if n == 13 {
+        printN();
+        return "odd";
+    } else if n == 14 {
+        printN();
+        return "even";
+    } else if n == 15 {
+        printN();
+        return "odd";
+    } else if n == 16 {
+        printN();
+        return "even";
+    } else if n == 17 {
+        printN();
+        return "odd";
+    } else if n == 18 {
+        printN();
+        return "even";
+    } else if n == 19 {
+        printN();
+        return "odd";
+    } else if n == 20 {
+        printN();
+        return "even";
+    } else if n == 21 {
+        printN();
+        return "odd";
+    } else if n == 22 {
+        printN();
+        return "even";
+    } else if n == 23 {
+        printN();
+        return "odd";
+    } else if n == 24 {
+        printN();
+        return "even";
+    } else if n == 25 {
+        printN();
+        return "odd";
+    } else if n == 26 {
+        printN();
+        return "even";
+    } else if n == 27 {
+        printN();
+        return "odd";
+    } else if n == 28 {
+        printN();
+        return "even";
+    } else if n == 29 {
+        printN();
+        return "odd";
+    } else if n == 30 {
+        printN();
+        return "even";
+    } else if n == 31 {
+        printN();
+        return "odd";
+    } else {
+        printN();
+        return "Literally nobody uses number that big. \"I'd like to order 32 apples\". Oh, come on!";
+    }
+}
+
+val answer = evenOdd(10);
+printValue(x, "x");
+
+

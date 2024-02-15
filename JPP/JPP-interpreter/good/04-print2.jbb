@@ -1,0 +1,15 @@
+
+writeInt(10);
+writeStr("\n");
+
+val f = || 1;
+var y = 0;
+
+for x = 0..100000 {
+    y = f();
+}
+
+writeInt(y);
+writeStr("\n");
+
+// ./Interpreter good/04-print2.jbb  0.38s user 0.00s system 99% cpu 0.386 total

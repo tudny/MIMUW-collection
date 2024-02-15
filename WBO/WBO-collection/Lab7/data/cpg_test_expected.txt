@@ -1,0 +1,34 @@
+Seq_0_testing_cpg_islands 1.0000 True
+Seq_1_testing_cpg_islands 1.0000 True
+Seq_2_testing_cpg_islands 1.0000 True
+Seq_3_testing_cpg_islands 1.0000 True
+Seq_4_testing_cpg_islands 1.0000 True
+Seq_5_testing_cpg_islands 1.0000 True
+Seq_6_testing_cpg_islands 1.0000 True
+Seq_7_testing_cpg_islands 0.0000 False
+Seq_8_testing_cpg_islands 0.1273 False
+Seq_9_testing_cpg_islands 0.0000 False
+Seq_10_testing_cpg_islands 1.0000 True
+Seq_11_testing_cpg_islands 1.0000 True
+Seq_12_testing_cpg_islands 1.0000 True
+Seq_13_testing_cpg_islands 1.0000 True
+Seq_14_testing_cpg_islands 0.0000 False
+Seq_15_testing_cpg_islands 0.0000 False
+Seq_16_testing_cpg_islands 0.0000 False
+Seq_17_testing_cpg_islands 1.0000 True
+Seq_18_testing_cpg_islands 1.0000 True
+Seq_19_testing_cpg_islands 0.0000 False
+Seq_20_testing_cpg_islands 1.0000 True
+Seq_21_testing_cpg_islands 0.0000 False
+Seq_22_testing_cpg_islands 0.0000 False
+Seq_23_testing_cpg_islands 1.0000 True
+Seq_24_testing_cpg_islands 1.0000 True
+Seq_25_testing_cpg_islands 0.0000 False
+Seq_26_testing_cpg_islands 0.0000 False
+Seq_27_testing_cpg_islands 1.0000 True
+Seq_28_testing_cpg_islands 0.0000 False
+Seq_29_testing_cpg_islands 0.0000 False
+
+### // EOF
+
+This is based on hardcoded probabilities.

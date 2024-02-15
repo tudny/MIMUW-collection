@@ -1,0 +1,48 @@
+
+val printVector = |val i: new Integer, val j: new Integer| {
+    writeInt(i);
+    writeStr(" ");
+    writeInt(j);
+    writeStr("\n");
+};
+
+fun mult1(
+    val a11: new Integer,
+    val a12: new Integer,
+    val a21: new Integer,
+    val a22: new Integer,
+    val v1: new Integer,
+    val v2: new Integer
+): Integer {
+    return a11 * v1 + a12 * v2;
+}
+
+fun mult2(
+    val a11: new Integer,
+    val a12: new Integer,
+    val a21: new Integer,
+    val a22: new Integer,
+    val v1: new Integer,
+    val v2: new Integer
+): Integer {
+    return a21 * v1 + a22 * v2;
+}
+
+var a11 = 0;
+var a12 = 1;
+var a21 = 1;
+var a22 = 1;
+
+var v1 = 1;
+var v2 = 1;
+
+for x = 1..10 {
+    var newV1 = mult1(a11, a12, a21, a22, v1, v2);
+    var newV2 = mult2(a11, a12, a21, a22, v1, v2);
+    v1 = newV1;
+    v2 = newV2;
+    printVector(v1, v2);
+}
+
+assert(v1 == 89);
+assert(v2 == 144);

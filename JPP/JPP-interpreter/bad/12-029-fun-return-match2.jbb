@@ -1,0 +1,24 @@
+
+var x: Integer = 42;
+var b: Boolean = true;
+
+fun foo() : String {
+    if x > 0 {
+        return x;
+    }
+
+    fun goo() : String {
+        if b {
+            return "abc";
+        }
+        return "cba";
+    }
+
+    goo();
+    return 17;
+}
+
+val x: String = "abc";
+
+foo();
+

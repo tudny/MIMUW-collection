@@ -1,0 +1,63 @@
+cabal-version:      2.4
+name:               MRJP-Latte
+version:            0.1.0.0
+
+synopsis:
+    Latte compiler for MRJP course at MIMUW
+
+description:
+    Latte compiler for MRJP course at MIMUW
+
+bug-reports:
+    https://github.com/tudny/MRJP-Latte/issues/new
+
+license:            MIT
+author:             Aleksander Tudruj
+maintainer:         aleksanderwt@gmail.com
+
+copyright:          Aleksander Tudruj
+category:           Language
+
+extra-source-files:
+    README.md
+
+executable latc_llvm
+    main-is:          Main.hs
+
+    other-modules:
+        Utils
+        Latte.Abs
+        Latte.ErrM
+        Latte.Lex
+        Latte.Par
+        Latte.Print
+        Latte.Skel
+        Frontend.TypeErrors
+        Frontend.TypeChecker
+        Frontend.TypeEvaluator
+        Frontend.AbstractSyntaxTree
+        Frontend.Commons
+        Frontend.ClassGraph
+        Frontend.Types
+        Backend.Core
+        Backend.Renaming
+        Backend.LLVMCode
+        Backend.Codegen
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base,
+                      array,
+                      ansi-terminal,
+                      mtl,
+                      containers,
+                      extra,
+                      utility-ht,
+                      pretty-simple,
+                      filepath,
+                      process,
+                      text,
+                      bytestring,
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    ghc-options: -j12

@@ -1,0 +1,56 @@
+
+// zmienne read-only
+
+val a: Integer = 1;
+
+// nie można przypisać do zmiennej read-only
+// a = 2; // błąd
+
+val a: Integer = 10;
+// można przysłonić, ale wszystkie powyższe odwołania do zmiennej `a` pozostaną 
+// na stare miejsce w pamięci
+
+
+val STALA: Integer = 1;
+
+fun foo() : Integer {
+    return STALA;
+}
+
+val STALA: Integer = 2;
+
+var x: Integer = foo();
+writeInt(x);
+// wypisze "1"
+
+
+// pętle for-range
+
+for i = 0..10 {
+    writeInt(i);
+}
+// wypisze "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+
+for i = 0..10 {
+    if i == 5 {
+        break;
+    }
+    writeInt(i);
+}
+// wypisze "0", "1", "2", "3", "4"
+
+for i = 12..20 {
+    // i = 0; // błąd
+}
+
+// for i = a..b {..} wykonuje się od a do b włącznie i zawsze rosnąco
+
+for i = 10..0 {
+    writeInt(i);
+}
+// nic się nie wypisze
+
+for i = 33..33 {
+    writeInt(i);
+}
+// wypisze "33"

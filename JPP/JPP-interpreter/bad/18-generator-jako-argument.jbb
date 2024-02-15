@@ -1,0 +1,7 @@
+
+// nie można przekazać generatora jako argument funkcji
+fun foo(val g: Gen[Integer]) : Unit {
+    return;
+}
+
+x;

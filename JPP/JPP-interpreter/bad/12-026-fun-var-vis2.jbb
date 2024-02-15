@@ -1,0 +1,5 @@
+fun foo(val x: Integer) : Integer {
+    return 42;
+}
+
+x;

@@ -1,0 +1,18 @@
+
+val x = 10;
+var y = 42;
+
+var s = "Hello";
+
+var b = true;
+
+var very_long_expression = x + (y * 2) + 3 + (b ? 1 : 0);
+
+var even_longer_expression = 
+    x + (y * 2) +
+    3 + (b ? 1 : 0) / 
+    2 + (x * 2) +
+    3 + (b ? 1 : 0) /
+    2 + (x * 2) +
+    3 + (b ? 1 : 0) /
+    2 + (x * 2);

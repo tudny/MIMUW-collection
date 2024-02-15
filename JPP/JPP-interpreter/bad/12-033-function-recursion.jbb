@@ -1,0 +1,10 @@
+
+fun fib(val x: new Integer) : Integer {
+    if x < 2 { return x; }
+    return fib(x - 1) + fib(x - 2);
+}
+
+var n = 10;
+writeInt(fib(n));
+
+not_decl = 1;

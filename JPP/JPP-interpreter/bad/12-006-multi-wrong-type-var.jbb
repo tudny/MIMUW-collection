@@ -1,0 +1,1 @@
+var x: Integer = "abc", y: String = 123;

@@ -1,0 +1,12 @@
+# This smart .gitignore will ignore all files (including binaries)
+# except for .lat, .output, and .input files.
+
+*
+
+!.gitignore
+
+!*.lat
+!*.output
+!*.input
+
+!*/

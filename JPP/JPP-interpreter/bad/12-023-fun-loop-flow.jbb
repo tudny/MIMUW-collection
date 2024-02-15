@@ -1,0 +1,5 @@
+
+fun foo() : Integer {
+    break;
+    return 42;
+}

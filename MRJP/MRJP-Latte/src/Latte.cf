@@ -1,0 +1,168 @@
+-- programs ------------------------------------------------
+
+entrypoints Program ;
+
+Program.   Program ::= [TopDef] ;
+
+TopFnDef.  TopDef ::= FnDef ;
+
+ClassDef.  TopDef ::= "class" MIdent "{" [ClassItem] "}" ;
+
+ClassExt.  TopDef ::= "class" MIdent "extends" MIdent "{" [ClassItem] "}" ;
+
+separator nonempty TopDef "" ;
+
+Arg. 	   Arg ::= Type MIdent;
+
+separator  Arg "," ;
+
+separator  ClassItem "" ;
+
+ClassFieldNull. ClassItem ::= Type [ClassField] ";" ;
+
+ClassMethod.    ClassItem ::= FnDef ;
+
+ClassField.     ClassField ::= MIdent ;
+
+separator  ClassField "," ;
+
+FnDef.     FnDef ::= Type MIdent "(" [Arg] ")" Block ;
+
+MIdent.    MIdent ::= Ident ;
+
+-- statements ----------------------------------------------
+
+Block.     Block ::= "{" [Stmt] "}" ;
+
+separator  Stmt "" ;
+
+Empty.     Stmt ::= ";" ;
+
+BStmt.     Stmt ::= Block ;
+
+Decl.      Stmt ::= Type [Item] ";" ;
+
+NoInit.    Item ::= MIdent ;
+
+Init.      Item ::= MIdent "=" Expr ;
+
+separator nonempty Item "," ;
+
+Ass.       Stmt ::= Expr "=" Expr ";" ;
+
+Incr.      Stmt ::= Expr "++" ";" ;
+
+Decr.      Stmt ::= Expr "--" ";" ;
+
+Ret.       Stmt ::= "return" Expr ";" ;
+
+VRet.      Stmt ::= "return" ";" ;
+
+Cond.      Stmt ::= "if" "(" Expr ")" Stmt  ;
+
+CondElse.  Stmt ::= "if" "(" Expr ")" Stmt "else" Stmt  ;
+
+While.     Stmt ::= "while" "(" Expr ")" Stmt ;
+
+SExp.      Stmt ::= Expr ";" ;
+
+For.       Stmt ::= "for" "(" Type MIdent ":" Expr ")" Stmt ;
+
+-- FunctionCall -------------------------------------------------
+
+FunctionCall. FunctionCall ::= MIdent "(" [Expr] ")" ;
+
+-- Types ---------------------------------------------------
+
+Int.       Type ::= "int" ;
+
+Str.       Type ::= "string" ;
+
+Bool.      Type ::= "boolean" ;
+
+Void.      Type ::= "void" ;
+
+Class.     Type ::= MIdent ;
+
+Array.     Type ::= Type "[]" ;
+
+internal   Fun. Type ::= Type "(" [Type] ")" ;
+
+separator  Type "," ;
+
+-- Expressions ---------------------------------------------
+
+EVar.      Expr8 ::= MIdent ;
+
+ELitInt.   Expr8 ::= Integer ;
+
+ELitTrue.  Expr8 ::= "true" ;
+
+ELitFalse. Expr8 ::= "false" ;
+
+EApp.      Expr8 ::= FunctionCall ;
+
+ENullCast. Expr8 ::= "(" Type ")null" ;
+
+EString.   Expr8 ::= String ;
+
+EArrGet.   Expr8 ::= Expr7 "[" Expr "]" ;
+
+EClassGet. Expr7 ::= Expr6 "." MIdent ;
+
+EClassMet. Expr7 ::= Expr6 "." FunctionCall ;
+
+EArr.      Expr7 ::= "new" Type "[" Expr "]" ;
+
+EClass.    Expr6 ::= "new" MIdent ;
+
+Neg.       Expr5 ::= "-" Expr5 ;
+
+Not.       Expr5 ::= "!" Expr5 ;
+
+EMul.      Expr4 ::= Expr4 MulOp Expr5 ;
+
+EAdd.      Expr3 ::= Expr3 AddOp Expr4 ;
+
+ERel.      Expr2 ::= Expr2 RelOp Expr3 ;
+
+EAnd.      Expr1 ::= Expr2 "&&" Expr1 ;
+
+EOr.       Expr ::= Expr1 "||" Expr ;
+
+coercions  Expr 8 ;
+
+separator  Expr "," ;
+
+-- operators -----------------------------------------------
+
+Plus.      AddOp ::= "+" ;
+
+Minus.     AddOp ::= "-" ;
+
+Times.     MulOp ::= "*" ;
+
+Div.       MulOp ::= "/" ;
+
+Mod.       MulOp ::= "%" ;
+
+LTH.       RelOp ::= "<" ;
+
+LE.        RelOp ::= "<=" ;
+
+GTH.       RelOp ::= ">" ;
+
+GE.        RelOp ::= ">=" ;
+
+EQU.       RelOp ::= "==" ;
+
+NE.        RelOp ::= "!=" ;
+
+-- comments ------------------------------------------------
+
+comment    "#" ;
+
+comment    "//" ;
+
+comment    "/*" "*/" ;
+

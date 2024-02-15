@@ -1,0 +1,76 @@
+
+fun foo() : Unit {
+    writeStr("Foooooo....");
+}
+
+fun bar(val x: Integer): Unit {
+    writeStr("Your number is...\n");
+    writeInt(x);
+}
+
+fun putSqRef(var x: Integer): Unit {
+    x = x * x;
+    writeStr("Your number squared is...\n");
+    writeInt(x);
+}
+
+var x: Integer = 10;
+putSqRef(x);
+// x będzie równy 100
+
+
+fun putSqCp(var x: new Integer): Unit {
+    x = x * x;
+    writeStr("Your number squared is...\n");
+    writeInt(x);
+}
+
+var x: Integer = 10;
+putSqCp(x);
+// x będzie równy 10
+
+
+// fun sqGen(val n: Integer): Gen[Integer] {
+//     var sq: Integer = 0;
+//     for k = 1..n {
+//         var odd: Integer = 2 * k - 1;
+//         sq = sq + odd;
+//         yield sq;
+//     }
+// }
+
+
+// fun printProgress(val n: Integer): Gen[Unit] {
+//     for k = 1..n {
+//         yield;
+//         writeStr("Done " + toString(k) + " out of " + toString(n) + " steps.");
+//     }
+// }
+
+// fun veryLongFunction(): Unit {
+//     var infoBar: Gen[Unit] = printProgress(3);
+//     val x : String = ""; // ... <long computation>
+//     next(infoBar);
+//     val y : String = ""; // ... <long computation>
+//     next(infoBar);
+//     val z : String = ""; // ... <long computation>
+//     next(infoBar);
+// }
+
+
+fun succ(val n: Integer) : Integer {
+    return n + 1;
+}
+
+fun jpp(val n: new Integer) : Integer {
+    fun jbb(val m: new Integer) : Integer {
+        fun jqq(val p: new Integer) : Integer {
+            return p + m + n;
+        }
+        return jqq(m + n) + m + n;
+    }
+    return jbb(n) + n;
+}
+
+val x: Integer = 10;
+jpp(x);

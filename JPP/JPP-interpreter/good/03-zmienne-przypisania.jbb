@@ -1,0 +1,43 @@
+// Stała liczbowa
+val answer: Integer = 42;
+
+// nie można zmienić wartość tej stałej. Można ją jednak przysłonić. Nawet innym typem.
+
+var answer: Integer = 21;
+var answer: String = "Kocham MIMUW";
+
+
+// Zmienna liczbowa
+var x: Integer = 17;
+var y: Integer = 21;
+var z: Integer = x + y;
+
+x = 18;
+y = 11;
+z = 34;
+
+// Zmienne słowne
+val s: String = "Kocham MIMUW";
+var t: String = "Kocham JPP";
+var u: String = s + " i " + t; // "Kocham MIMUW i Kocham JPP"
+
+u = "Kocham MIMUW i JPP";
+
+
+// Zmienne logiczne
+var b: Boolean = true;
+var c: Boolean = false;
+
+// Bloki definicji zmiennych
+var x: Integer = 17, y: Integer = 21, z: Integer = 45;
+var abc: String = "abc", x: Integer = 11;
+var xyz: String = "xyz", y: Integer;
+var mnl: String, z: Integer = 11;
+
+// Analogicznie ze stałymi
+val x: Integer = 17, y: Integer = 21, z: Integer = 45;
+val abc: String = "abc", x: Integer = 11;
+val xyz: String = "xyz", y: Integer = 12, b: Boolean = true;
+// choć tutaj nie możemy pozwolić na niezainicjalizowaną zmienną
+
+

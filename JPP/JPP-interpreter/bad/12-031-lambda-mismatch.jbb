@@ -1,0 +1,2 @@
+
+val f: (val Integer) -> Integer = |var x: Integer| x;

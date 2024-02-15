@@ -1,0 +1,18 @@
+if 0 < 1 {
+    if 0 < 1 {
+        return 17;
+        if 0 < 1 {
+            val x: Integer = 1;
+            if x < 0 {
+                return 1;
+            }
+            "abc";
+        } else {
+            return 2;
+        }
+    } else {
+        return 3;
+    }
+} else {
+    return 42;
+}

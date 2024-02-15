@@ -1,0 +1,14 @@
+
+val f = || (|| 5)();
+
+assert(f() == 5);
+
+
+val f = |val n: new Integer| (|| f() + 7)();
+
+assert(f(0) == 12);
+
+
+val f = || (|val n: new Integer| f(-45) + 9)(-4);
+
+assert(f() == 21);

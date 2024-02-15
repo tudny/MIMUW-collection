@@ -1,0 +1,13 @@
+**/*.dyn_hi
+**/*.dyn_o
+**/*.dyn_hi
+**/*.o
+**/*.hi
+obj/
+THTestPoly.hs
+Modulo.hs
+polyTest
+polyBenkeTest
+testy-zad1/
+.vscode/
+.idea/

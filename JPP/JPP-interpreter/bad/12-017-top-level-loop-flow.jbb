@@ -1,0 +1,17 @@
+if 0 < 1 {
+    if 0 < 1 {
+        if 0 < 1 {
+            val x: Integer = 1;
+            if x < 0 {
+                break;
+            }
+            "abc";
+        } else {
+            break;
+        }
+    } else {
+        continue;
+    }
+} else {
+    break;
+}

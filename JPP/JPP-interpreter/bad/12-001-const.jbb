@@ -1,0 +1,2 @@
+val x: Integer = 0;
+x++;

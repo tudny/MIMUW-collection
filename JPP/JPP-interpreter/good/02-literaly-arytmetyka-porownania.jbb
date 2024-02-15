@@ -1,0 +1,28 @@
+
+var a: Integer = 23;
+var b: Integer = 19;
+var c: Integer = a + b; // c = 42
+
+var z: Integer = a - b; // z = 4
+z = a * b;              // z = 437
+z = a / b;              // z = 1
+
+var B: Boolean = true;
+B = a < b;  // b = false
+B = a > b;  // b = true
+B = a <= b; // b = false
+B = a >= b; // b = true
+B = a == b; // b = false
+B = a != b; // b = true
+
+var b1: Boolean = true;
+var b2: Boolean = false;
+var b3: Boolean = b1 && b2;  // b3 = false
+b3              = b1 || b2;  // b3 = true
+
+var s: String = "Hello";
+// Pozwalamy na konkatenację stringów.
+// Nie pozwalamy na mieszanie typów dla operacji `+`.
+s = s + " World";   // s = "Hello World"
+
+s = "Kocham Haskella"; // s = "Kocham Haskella"

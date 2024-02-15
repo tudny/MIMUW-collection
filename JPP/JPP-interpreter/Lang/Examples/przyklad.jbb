@@ -1,0 +1,30 @@
+// Przykład pokazany na zajęciach pod Pana okiem
+
+var a = 42;
+
+fun gen(val x: new Integer): () -> Integer {
+    var y = a;
+    fun foo(): Integer {
+        y = y + 1;
+        writeInt(y);
+        writeStr("\n");
+        return x + y;
+    }
+    if x == 0 {
+        return foo;
+    }
+    return foo;
+}
+
+var a = "abc";
+
+val f = gen(17);
+val r = f();
+
+writeInt(r);
+writeStr("\n");
+
+val r = f();
+
+writeInt(r);
+writeStr("\n");

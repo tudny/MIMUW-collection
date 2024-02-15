@@ -1,0 +1,12 @@
+
+var x: Integer = 10;
+
+fun foo(var y: Integer) : Integer {
+    fun goo() : Integer {
+        return x;
+    }
+    return goo() + y;
+}
+
+val x: Integer = 42;
+foo(x);

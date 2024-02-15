@@ -1,0 +1,70 @@
+#!/usr/bin/env jabba
+
+fun sive(val n: new Integer): [Boolean] {
+    val isPrime = [n; true];
+    for x = 0..1 {
+        isPrime[x] = false;
+    }
+
+    for x = 2..n-1 {
+        if isPrime[x] {
+            for y = x*x..n-1 {
+                if y % x == 0 {
+                    isPrime[y] = false;
+                }
+            }
+        }
+    }
+
+    return isPrime;
+}
+
+val n = 1000;
+val primes = sive(n);
+
+val print = |val x: new Integer| {
+    writeInt(x);
+    writeStr("\n");
+};
+
+
+for x = 0..n-1 {
+    if primes[x] {
+        print(x);
+    }
+}
+
+assert(primes[2] == true);
+assert(primes[3] == true);
+assert(primes[4] == false);
+assert(primes[5] == true);
+
+
+
+fun bubbleSort(var arr: [Integer], val len: new Integer) {
+    for i = 0..len-1 {
+        for j = 0..len-2-i {
+            if arr[j] > arr[j+1] {
+                val tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+        }
+    }
+}
+
+var arr = [5, 4, 3, 2, 1];
+
+writeStr("===\nArray before sort:\n");
+for i = 0..4 {
+    writeInt(arr[i]);
+    writeStr("\n");
+}
+
+bubbleSort(arr, 5);
+
+writeStr("===\nArray after sort:\n");
+for i = 0..4 {
+    writeInt(arr[i]);
+    writeStr("\n");
+}

@@ -1,0 +1,11 @@
+
+// This test checks if the flow analysis is able to detect that the
+// loop flow is broken and that the variable x is not used after the
+// loop, but also checks if loop flow is cleared after the loop.
+for x = 0..1 {
+    break;
+    if 0 == 0 {
+        continue;
+    }
+}
+x;

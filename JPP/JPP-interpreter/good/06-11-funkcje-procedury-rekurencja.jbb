@@ -1,0 +1,116 @@
+
+fun foo() : Unit {
+    writeStr("Ala ma kota");
+    writeStr(toString(11));
+    writeInt(11);
+}
+
+foo();
+// wypisze "Ala ma kota", "11" i "11"
+
+
+// Przekazywanie argumentów jako stałe
+
+fun bar(val x: new Integer) : Unit {
+    writeInt(x);
+}
+
+bar(42);
+// wypisze "42"
+
+fun baz(val x: new Integer, val y: new Integer) : Integer {
+    return x + y;
+}
+
+var z: Integer = baz(17, 21);
+writeInt(z);
+// wypisze "38"
+
+
+fun qux(val x: new String) : Integer {
+    return toInt(x);
+}
+
+var z: Integer = qux("17");
+writeInt(z);
+// wypisze "17"
+
+
+fun sum(val x: new Integer, val y: new Integer, val z: new Integer) : Integer {
+    return x + y + z;
+}
+
+var z: Integer = sum(1, 2, 3);
+writeInt(z);
+// wypisze "6"
+
+
+// Przekazywanie argumentów jako zmienne referencyjne
+
+// przekazanie referencji do zmiennej
+fun foo(var x: Integer) : Unit {
+    writeInt(x);
+    x = x + 1;
+    writeInt(x);
+}
+
+var x: Integer = 42;
+foo(x);
+// wypisze "42", "43"
+writeInt(x);
+// wypisze "43"
+
+// przekazanie kopii zmiennej
+fun foo_new(var x: new Integer) : Unit {
+    writeInt(x);
+    x = x + 1;
+    writeInt(x);
+}
+
+var x: Integer = 42;
+foo_new(x);
+// wypisze "42", "43"
+writeInt(x);
+// wypisze "42"
+
+
+fun swap(var x: Integer, var y: Integer) : Unit {
+    var tmp: Integer = x;
+    x = y;
+    y = tmp;
+}
+
+var x: Integer = 1;
+var y: Integer = 2;
+swap(x, y);
+writeInt(x);
+writeInt(y);
+// wypisze "2", "1"
+
+
+// Rekurencja
+fun fib(val n: new Integer) : Integer {
+    if n < 2 { return n; }
+    return fib(n - 1) + fib(n - 2);
+}
+
+var x: Integer = fib(10);
+writeInt(x);
+// wypisze "55"
+
+
+fun inc_to_10(var x: Integer) : Integer {
+    if x >= 10 { return x; }
+    x = x + 1;
+    return inc_to_10(x);
+}
+
+var arg: Integer = 0;
+var x: Integer = inc_to_10(arg);
+writeInt(x);
+// wypisze "10"
+
+arg = 20;
+var x: Integer = inc_to_10(arg);
+writeInt(x);
+// wypisze "20"

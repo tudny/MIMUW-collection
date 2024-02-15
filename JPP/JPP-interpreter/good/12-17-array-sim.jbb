@@ -1,0 +1,83 @@
+
+
+fun arrayEmpty(val n: new Integer): Integer {
+    return 0;
+}
+
+fun arraInit(val n: new Integer): Integer {
+    return n;
+}
+
+fun arrayGet(val arr: new (val$Integer) -> Integer, val i: new Integer): Integer {
+    return arr(i);
+}
+
+fun arraySet(
+    val arr: new (val$Integer) -> Integer, 
+    val i: new Integer, val v: new Integer
+): (val$Integer) -> Integer {
+    return |val j: new Integer| {
+        if (i == j) {
+            return v;
+        } else {
+            return arr(j);
+        }
+    };
+}
+
+fun map(
+    val arr: new (val$Integer) -> Integer,
+    val f: new (val$Integer) -> Integer
+): (val$Integer) -> Integer {
+    return |val i: new Integer| {
+        return f(arr(i));
+    };
+}
+
+
+// =============================================================================
+
+val TREE_SIZE = 10;
+
+var visited = arrayEmpty;
+var treeValue = map(arraInit, |val i: new Integer| 2 * i);
+var parent = |val n: new Integer| {
+    if n == 1 { return -1; }
+    return n / 2;
+};
+var leftChild = |val n: new Integer| {
+    if 2 * n > TREE_SIZE { return -1; }
+    return 2 * n;
+};
+var rightChild = |val n: new Integer| {
+    if 2 * n + 1 > TREE_SIZE { return -1; }
+    return 2 * n + 1;
+};
+treeValue = arraySet(treeValue, 1, 1);
+
+// =============================================================================
+
+fun printTree(val treeNode: new Integer) {
+    if (treeNode == -1) {
+        return;
+    }
+    printTree(leftChild(treeNode));
+    writeStr("Node ");
+    writeInt(treeNode);
+    writeStr(" has value ");
+    writeInt(treeValue(treeNode));
+    writeStr("\n");
+    printTree(rightChild(treeNode));
+}
+
+//         1
+//        /  \
+//       2    3
+//      / \   /\
+//     4   5 6  7
+//    / \ /   
+//   8  9 10
+
+
+
+printTree(1);

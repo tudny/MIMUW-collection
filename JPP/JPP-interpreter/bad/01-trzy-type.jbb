@@ -1,0 +1,5 @@
+
+// to nie są poprawne typy
+var u: int = 1;
+var s: string = "abc";
+var b: bool = true;

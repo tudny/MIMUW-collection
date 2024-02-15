@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+fun fib(val n: new Integer): Integer {
+    assert(n >= 0);
+    if n < 2 {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+assert(fib(10) == 55);
+assert(fib(11) == 89);
+fib(-1);
+

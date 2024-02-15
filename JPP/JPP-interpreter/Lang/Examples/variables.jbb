@@ -1,0 +1,47 @@
+#!/usr/bin/env jabba
+// Liczby całkowite i zmienne
+
+
+// Utworzenie zmiennej x
+//  i inicializacja jej wartością 20
+var x : Integer = 20;
+
+// Utworzenie zmiennej y
+//  i inicializacja jej wartością 30
+var y : Integer = 30;
+
+// Zmiana wartości zmiennej x na 20 + 30 = 50
+x = x + y;
+
+// Utworzenie stałej the_answer
+val the_answer : Integer = 42;
+
+// Błąd kompilacji - nie można zmienić wartości stałej
+// the_answer = 43; 
+
+
+// Deklaracja i inicializacja wielu zmiennych
+var a : Integer = 10, b : Integer = 20, c : Integer = 30;
+var a : Integer, b : Integer, c : Integer;
+var a : Integer = 10, b : Integer;
+
+
+// Ciągi znaków
+
+// Utworzenie zmiennej s
+//  i inicializacja jej wartością "Hello"
+var s : String = "Hello";
+
+// Utworzenie zmiennej t
+//  i inicializacja jej wartością "World"
+var t : String = "World";
+
+// Zmiana wartości zmiennej s na "Hello World"
+s = s + " " + t;
+
+// Utworzenie stałej the_question
+val the_question : String = "What is the answer to the ultimate question of life, the universe and everything?";
+
+// Wartości logiczne
+var b2 : Boolean = true;
+var b3 : Boolean = false;

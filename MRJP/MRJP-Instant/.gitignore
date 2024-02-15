@@ -1,0 +1,13 @@
+.vscode
+.idea
+insc_jvm
+insc_llvm
+*.tar.gz
+*.tgz
+
+test_all.sh
+
+tests/
+
+testerTests
+cases

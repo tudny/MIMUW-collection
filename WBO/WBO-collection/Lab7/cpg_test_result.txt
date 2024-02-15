@@ -1,0 +1,30 @@
+Sequence: Seq 0 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 1 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 2 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 3 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 4 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 5 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 6 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 7 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 8 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 9 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 10 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 11 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 12 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 13 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 14 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 15 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 16 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 17 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 18 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 19 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 20 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 21 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 22 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 23 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 24 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 25 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 26 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 27 testing cpg islands | Ratio: 1.0000 | CpG island
+Sequence: Seq 28 testing cpg islands | Ratio: 0.0000 | Not CpG island
+Sequence: Seq 29 testing cpg islands | Ratio: 0.0000 | Not CpG island

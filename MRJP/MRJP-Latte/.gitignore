@@ -1,0 +1,7 @@
+*.tar.gz
+latc_llvm
+dist-newstyle
+.vscode/
+*.lat
+sandboxes/
+backups/

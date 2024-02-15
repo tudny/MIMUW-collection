@@ -1,0 +1,115 @@
+
+val f = |val x: new Integer| x;
+
+val g = |val x: new Integer| x + 1;
+
+var h = |val x: new Integer| x + 1;
+
+var i = |val x: new Integer| {
+    return x + 1;
+};
+
+var z = || {
+    f(10);
+    g(10);
+    h(10);
+};
+
+val const5 = || 5;
+
+val x = const5();
+
+
+var m = || (|| 5) ;
+
+var x: Integer = m()();
+
+assert(x == 5);
+
+var f: (val Integer) -> Integer = |val x: Integer| x;
+
+var g: (var String) -> String = |var x: String| "World";
+
+var h: (var$String) -> String = |var x: new String| "World";
+
+fun foo(val x: new Integer): Integer {
+    return x;
+}
+
+var xyz = foo;
+
+var xyzT: (val$Integer) -> Integer = foo;
+
+var foo = |var x: new String| "Fooooo";
+
+foo("Hello");
+xyzT(10);
+
+
+fun abc(val x: new Integer): (val$Integer) -> Integer {
+    return |val y: new Integer| x + y;
+}
+
+val abc_res = abc(10);
+
+var x = abc_res(20);
+
+x == 10;
+
+"abc" == "zyx";
+
+
+fun natArray(): (val Integer) -> Integer {
+    return |val x: Integer| x; 
+}
+
+val t = natArray();
+
+fun filter(
+    val t: (val Integer) -> Integer, 
+    val m: (val$Integer) -> Boolean
+) : (val Integer) -> Integer {
+    return |val x: Integer| {
+        if m(t(x)) {
+            return t(x);
+        } else {
+            return -1;
+        }
+    };
+}
+
+fun map(
+    val t: (val Integer) -> Integer, 
+    val m: (val$Integer) -> Integer
+) : (val Integer) -> Integer {
+    return |val x: Integer| m(t(x));
+}
+
+
+val isOdd = |val x: new Integer| x % 2 == 1;
+
+isOdd;
+
+val odd = filter(t, isOdd);
+
+"poszlo";
+
+for x = 0..100 {
+    if odd(x) != -1 {
+        writeInt(odd(x));
+        writeStr("\n");
+        odd(x);
+    }
+}
+
+
+fun incr(var x: Integer) {
+    x = x + 1;
+}
+
+var incrL = |var x: Integer| { x = x + 1; };
+
+var x = 10;
+incr(x);
+
+

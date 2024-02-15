@@ -1,0 +1,7 @@
+
+fun foo() : Integer {
+    var x : Integer = 0;
+    return 42;
+}
+
+x;

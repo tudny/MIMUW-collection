@@ -1,0 +1,20 @@
+
+writeStr("Hello, world!"); // "Hello, world!"
+
+var s: String = "Kocham MIMUW";
+writeStr(s); // "Kocham MIMUW"
+
+
+writeInt(42); // 42
+
+var x: Integer = 17;
+var y: Integer = 21;
+var z: Integer = x + y;
+writeInt(z); // 38
+
+
+var x: Integer = toInt("17");
+writeInt(x); // 17
+
+var y: String = toString(21);
+writeStr(y); // "21"

@@ -1,0 +1,12 @@
+
+// This test checks if the flow analysis is able to detect that the
+// loop flow is broken and that the variable x is not used after the
+// loop, but also checks if loop flow is cleared after the loop.
+while 0 < 1 {
+    val x: Integer = 0;
+    break;
+    if 0 == 0 {
+        continue;
+    }
+}
+x;

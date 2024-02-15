@@ -1,0 +1,56 @@
+
+// Literały liczbowe i tekstowe
+var x : Integer = 11;
+var y : String = "Hello, World\n!";
+
+x = 42;
+y = "Witaj, świecie!\n";
+
+var a: Integer = 42;
+var b: Integer = 11;
+
+a == x;  // prawda
+a != x;  // fałsz
+a == b;  // fałsz
+a != b;  // prawda
+
+a <  b;  // fałsz
+a >  b;  // prawda
+a <= b;  // fałsz
+a >= b;  // prawda
+
+a <= x;  // prawda
+a >= x;  // prawda
+
+var b0: Boolean = false;
+var b1: Boolean = true;
+
+// logiczny `and`
+b0 && b1;   // fałsz
+
+// logiczny `or`
+b0 || b1;   // prawda
+
+// logiczny `not`
+!b0;        // prawda
+
+
+// ==============================================
+
+var x : Integer = 18;
+var y : Integer = 24;
+
+x + y;  // 42
+x - y;  // -6
+-x;     // -18
+x * y;  // 432
+x / 2;  // 9
+x / 5;  // 3
+18 % 5; // 3
+
+x++;    // Wartość x po operacji: 19
+// analogicznie operator `--`
+
+// operator ternarny
+true ? 1 : 2;   // 1
+false ? 1 : 2;  // 2

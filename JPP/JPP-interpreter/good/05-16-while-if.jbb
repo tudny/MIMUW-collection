@@ -1,0 +1,93 @@
+
+// pętla while
+
+var x: Integer = 0;
+var N: Integer = 10;
+
+while x < N {
+    writeInt(x);
+    x = x + 1;
+}
+// wypisze 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+
+// pętla while z break
+
+var x: Integer = 0;
+var N: Integer = 10;
+
+while x < N {
+    writeInt(x);
+    x = x + 1;
+    if x == 5 {
+        break;
+    }
+}
+// wypisze 0, 1, 2, 3, 4
+
+
+// pętla while z continue
+
+var x: Integer = 0;
+var N: Integer = 10;
+
+while x < N {
+    x = x + 1;
+    if x == 5 {
+        continue;
+    }
+    writeInt(x);
+}
+// wypisze 1, 2, 3, 4, 6, 7, 8, 9, 10
+
+
+// pętla while z finally
+
+var x: Integer = 0;
+var N: Integer = 10;
+
+while x < N {
+    x = x + 1;
+    if x == 5 {
+        continue;
+    }
+    writeInt(x);
+} finally {
+    writeInt(x);
+}
+// wypisze 1, 2, 3, 4, 6, 7, 8, 9, 10, 10
+
+var x: Integer = 0;
+var N: Integer = 10;
+
+while x < N {
+    x = x + 1;
+    if x == 5 {
+        break;
+    }
+    writeInt(x);
+} finally {
+    writeInt(x); // wystąpił `break`, więc blok `finally` nie zostanie wykonany
+}
+// wypisze 0, 1, 2, 3, 4
+
+
+
+// instrukcja if-else
+
+var x: Integer = 42;
+
+// nie pozwalamy na `else if` bez bloku. Co za dużo ifów to nie zdrowo.
+if x < 0 {
+    writeStr("x < 0");
+} else {
+    if x == 0 {
+        writeStr("x == 0");
+    } else {
+        writeStr("x > 0");
+    }
+}
+
+if x % 2 == 0 {
+    x = x / 2;
+}

@@ -1,0 +1,14 @@
+
+val plus_one = |
+    var f: (val$Integer) -> Integer
+| {
+    return |val x: new Integer| f(x) + 1;
+};
+
+
+var id = |val x: new Integer| x;
+var id_plus_one = plus_one(id);
+id = id_plus_one;
+
+
+not_decl;

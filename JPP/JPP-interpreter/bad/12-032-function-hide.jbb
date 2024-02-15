@@ -1,0 +1,6 @@
+
+fun foo(var x: Integer) : Integer {
+    return x + 42;
+}
+
+foo = |var x: Integer| x;

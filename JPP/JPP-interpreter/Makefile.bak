@@ -1,0 +1,3 @@
+
+generate:
+	bnfc -m -d --haskell -p Src -o . Lang/jabba.cf --functor
