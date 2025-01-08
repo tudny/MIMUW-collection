@@ -1,0 +1,166 @@
+\documentclass[a4paper,12pt]{article}
+
+\title{ MPI task - report }
+\author{ HPC | Aleksander Tudruj }
+\date{ 2024-06-25 }
+
+\input{macros}
+
+\newcommand{\plottimes}[4]{
+    \begin{figure}
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{img/#1}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{img/#2}
+        \end{subfigure}
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{img/#3}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{img/#4}
+        \end{subfigure}
+    \end{figure}
+}
+
+\begin{document}
+    \maketitle
+
+    \tableofcontents
+    \newpage
+
+    \section{ Distribution }
+
+    Both input matrices are given as text files available for the first process.
+    Every algorithm uses the same distribution method.
+    The method is pretty simple -- for a single the first process reads
+    the whole matrix into memory, calculates the ranges for the process grid
+    and sends the data row by row (in the process grid).
+    It sends them asynchronously to the other processes in a single row,
+    as the sub-matrices can take too much space in the memory.
+
+    Ranges are calculated as described in the task description.
+    No two ranges lengths can differ by more than 1.
+    Adequate unit tests are provided in the code.
+    This ensures data is distributed evenly among the processes.
+
+    One note regarding sending a matrix. A matrix object is represented as a tuple
+    of six elements:
+    \begin{itemize}
+        \item uint32\_t rows
+        \item uint32\_t cols
+        \item uint32\_t nnz
+        \item array of double values
+        \item array of uint32\_t col indices
+        \item array of uint32\_t row offsets
+    \end{itemize}
+
+    Those arrays can take more space than MPI allows to send in a single request.
+    That is why the data is split into batches and sent in multiple non-blocking requests.
+    First request is always a matrix metadata (rows, cols, nnz) and the rest are the data.
+    This is important in SUMMA3D implementation.
+
+    \section{ Summa2D }
+
+    Algorithm SUMMA2D is implemented as described in the provided paper.
+    In order to keep the implementation simple, the indirect matrix results
+    are kept in hash map (std::unordered\_map). This enables to implement
+    the local multiplication algorithm, that does approximately the same
+    number of steps as the number of hits in the multiplication --
+    by hit I mean a pair of elements that are multiplied together.
+
+    The key in the hash map is a uint64\_t number that represents
+    the binary concatenation of the row and column indices that are uint32\_t.
+
+    Maybe I am not sure whether this is faster than concatenation of the
+    matrices, but it is definitely faster than concatenation on the fly.
+
+    If no verbose flag is set, the result matrix is not loaded into master process.
+    If g\_value flag is set, the result is collected using MPI\_Gather with sum operation.
+
+    \section{ Summa3D }
+
+    Algorithm SUMMA3D is implemented as described in the provided paper, as well.
+    It uses SUMMA2D algorithm directly by leveraging MPI Comm split on layer as a key.
+
+    Due to the problem described in the Distribution section, the data is sent in batches.
+    I decided not to use MPI provided AllToAll function, as it would require to send
+    the data in a single request, or do some mambo jumbo with MPI\_Datatypes.
+
+    Instead, I implemented the all to all by hand using the following schema:
+    Let's say we are process $(i, j, l)$ in the grid and want to send data
+    to all processes in the same layer, and receive data from all processes in the same layer.
+    We go in a loop of $o_{ffset} = 1, ..., layers$.
+    In each iteration we send data to $(i, j, l - o_{ffset})$ and receive data from $(i, j, l + o_{ffset})$
+    -- all the arithmetic is done modulo the grid size. Sends are done asynchronously,
+    and receives are done synchronously.
+
+    \section{ Summa3D balanced }
+
+    Unfortunately, I did not have time to implement the balanced version of the SUMMA3D algorithm.
+    I only had an idea how to approach this problem painlessly during my morning shower.
+    As it is not implemented feel free to ignore this section.
+
+    The idea is based on the following observation:
+
+    Let $A, B \in \R^{n \times n}$ and let $P \in \R^{n \times n}$ be a permutation matrix.
+    Let $C = A \cdot B$. As $P$ is a permutation matrix it is orthogonal, so $P^T = P^{-1}$.
+    Then $C = A \cdot B = A \cdot I \cdot B = A \cdot P^T \cdot P \cdot B = (A \cdot P^T) \cdot (P \cdot B)$.
+
+    This observation tells us that we can permute columns in $A$ the same way as we permute
+    rows in $B$ and the result will be the same. This is the key to the balanced SUMMA3D algorithm.
+    I told this to my friend in a tram and he decided to give it a try -- look for
+    Mieszko Grodzicki's implementation.
+
+    The problem that we are now facing is to choose the permutation matrix $P$.
+    We can try to develop state of the art algorithm to find the best permutation matrix,
+    but we can also use the following heuristic: chose $P$ randomly.
+    Random distribution should be more or less balanced,
+    but next problem arises -- data can be cluttered in the first rows of $A$.
+    In order to balance this, we would have to choose two permutation matrices $Q_A, Q_B$,
+    and permute rows in $A$ and columns in $B$.
+
+    The final formula is
+    $$
+    C = Q_A^T \cdot (Q_A \cdot A \cdot P^T) \cdot (P \cdot B \cdot Q_B) \cdot Q_B^T.
+    $$
+
+    \section{ Testing }
+
+    The code is tested using Google Test framework for unit tests,
+    but also is tested on random sparse matrices generated using some
+    Python scripts. Both algorithm were tested on hundreds of matrices
+    and on hundreds of different process grids.
+
+    Local testing bench allowed me to test at most on 10 processes,
+    but some MPI magic unlocked oversubscription on the local machine,
+    and allowed to test on over a hundred processes.
+
+    This approach is better than spamming the cluster with small jobs.
+
+    Later, when the code was ready, I tested it on the cluster using
+    the provided scripts. Both performance and correctness tests were
+    performed.
+
+    \section{ Performance }
+
+    The performance of my implementation is not the best, but
+    at least seems correct. I really wanted to implement the balanced
+    version, but the end of the semester was a bit overwhelming.
+
+    The performance can be seem on the following plots. There are two types
+    of time measurements: total time and algorithm time.
+    The total time also includes the time of reading the matrices from the disk,
+    which (same as with the CUDA task) is a small bottleneck.
+
+    \plottimes
+        {algorithm-time-ms_speedup_medium}
+        {algorithm-time-ms_speedup_large}
+        {total-time-ms_speedup_medium}
+        {total-time-ms_speedup_large}
+
+\end{document}

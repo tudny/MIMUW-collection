@@ -1,0 +1,13 @@
+#include <string>
+#include <filesystem>
+
+namespace assets {
+#define FIXTURES_DIR "@CMAKE_SOURCE_DIR@/test/fixtures"
+
+    namespace fs = std::filesystem;
+
+    inline std::string fixtures_dir(const std::string &fixture) {
+        std::string separator{fs::path::preferred_separator};
+        return FIXTURES_DIR + separator + fixture;
+    }
+}

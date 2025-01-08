@@ -1,0 +1,89 @@
+%\pagestyle {empty} %wyłącza numerowanie stron
+\usepackage[super]{nth}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{Nblue}{RGB}{0, 72, 110}
+\definecolor{Lblue}{RGB}{236, 250, 255}
+
+\usepackage[headheight=0cm, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsfonts,amsmath}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage{blindtext}
+\usepackage{hyperref}
+
+\newcommand{\stirSet}[2]{\left\{\begin{array}{c}
+                                    \!\!#1\\ \!\!#2
+\end{array}\!\!\right\}}
+\newcommand{\stirPerm}[2]{\left[\begin{array}{c}
+                                    \!\!#1\\ \!\!#2
+\end{array}\!\!\right]}
+\newcommand{\stirBin}[2]{\left\left(\begin{array}{c}
+                                        \!\!#1\\ \!\!#2
+\end{array}\!\!\right\right)}
+\newcommand{\set}[1]{\left\{ #1\right\}}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\newcommand{\ceil}[1]{\lceil #1\rceil}
+\newcommand{\suma}[2]{\sum \limits_{#1}^{#2} }
+\newcommand{\infsum}[1]{\sum_{#1}^{\infty}}
+\newcommand{\mysuma}[2]{\sum_{#1}^{#2}}
+\newcommand{\myroot}[2]{\sqrt[\leftroot{0}\uproot{0}#1]{#2}}
+
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\af}[1]{\text{af}{#1}}
+\newcommand{\lin}[1]{\text{lin}{#1}}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\mat}[1]{\left[\begin{matrix}
+                               #1
+\end{matrix}\right]}
+\newcommand{\operacje}[1]{\begin{matrix}
+                              #1
+\end{matrix}}
+\newcommand{\row}[0]{\text{R}}
+\newcommand{\uklad}[1]{\begin{cases}
+                           #1
+\end{cases}}
+\newcommand{\la}[0]{\left\left(}
+\newcommand{\ra}[0]{\right\right)}
+
+\newcommand{\myeq}[1]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{=}}}
+
+\usepackage { graphicx }
+
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{multicol}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+    language=C++,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=2
+}
+
+\usepackage{caption}
+\usepackage{subcaption}

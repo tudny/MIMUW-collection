@@ -1,0 +1,11 @@
+build*/
+cmake-build-*/
+gpugenv
+.vscode/
+.idea/
+*.zip
+*.tar.gz
+*.pdf
+data/
+workdir*/
+*.csv

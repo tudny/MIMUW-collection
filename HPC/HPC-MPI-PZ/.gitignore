@@ -1,0 +1,8 @@
+.idea/
+cmake-build-*/
+build/
+.vscode/
+venv/
+*.zip
+test-data-dump/
+sbatch/
